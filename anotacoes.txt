@@ -1,0 +1,21 @@
+*criar um novo projeto (requer node)
+npx create-react-app my-app
+*adicionar axios às dependencias, no arquivo package.json
+"axios":"0.26.0"
+na mesma pasta, rodar o comando npm install
+*rodar o servidor
+npm start
+*para debug, é preciso defirnir o chrome no debug-->debug and run-> select chrome
+*alterar a porta no arquivo launch.json criado, no campo url, para 3000.
+*ATENÇÃO: primeiro se roda o servidor com "npm start", e depois lança-se o debug, usando "Launch Chrome againt local host"
+
+*aumentar limite de watchers (https://www.vivaolinux.com.br/dica/Error-ENOSPC-System-limit-for-number-of-file-watchers-reached-Resolvido)
+    
+    # insert the new value into the system config
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+    # check that the new value was applied
+    cat /proc/sys/fs/inotify/max_user_watches
+
+    # config variable name (not runnable)
+    fs.inotify.max_user_watches=524288
